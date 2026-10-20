@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Burger House: card&aacute;pio digital demonstrativo de hamburgueria com oito produtos, filtros e carrinho interativo. Projeto fict&iacute;cio de portf&oacute;lio." name="description"/>
+  <meta content="#101010" name="theme-color"/>
+  <title>
+   Burger House | Card&aacute;pio Digital &mdash; Projeto Demonstrativo
+  </title>
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <!-- Arquivos do projeto -->
+  <link href="style.css" rel="stylesheet"/>
+  <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <meta content="website" property="og:type"/>
+  <meta content="pt_BR" property="og:locale"/>
+  <meta content="Burger House" property="og:site_name"/>
+  <meta content="Burger House | Smash &amp; Grill" property="og:title"/>
+  <meta content="Projeto demonstrativo de card&aacute;pio digital com filtros e carrinho de pedidos interativo." property="og:description"/>
+  <link href="etapa4.css" rel="stylesheet"/>
+  <link href="etapa5.css" rel="stylesheet"/>
+  <script defer="" src="script.js">
+  </script>
+ </head>
+ <body>
+  <!-- Acessibilidade: atalho para o conteúdo principal -->
+  <a class="skip-link" href="#conteudo">
+   Pular para o conte&uacute;do
+  </a>
+  <!-- 01. CABEÇALHO -->
+  <header class="site-header">
+   <div class="container header-inner">
+    <a aria-label="Burger House &mdash; in&iacute;cio" class="logo" href="#inicio">
+     BURGER
+     <span>
+      HOUSE
+     </span>
+     <small>
+      SMASH &amp; GRILL
+     </small>
+    </a>
+    <button aria-controls="main-navigation" aria-expanded="false" aria-label="Abrir menu" class="menu-toggle" id="menu-toggle" type="button">
+     <span aria-hidden="true" class="menu-bar">
+     </span>
+     <span aria-hidden="true" class="menu-bar">
+     </span>
+     <span aria-hidden="true" class="menu-bar">
+     </span>
+    </button>
+    <nav aria-label="Navega&ccedil;&atilde;o principal" class="navigation" id="main-navigation">
+     <a href="#inicio">
+      In&iacute;cio
+     </a>
+     <a href="#cardapio">
+      Card&aacute;pio
+     </a>
+     <a href="#bastidores">
+      Bastidores
+     </a>
+     <a href="#sobre">
+      Sobre
+     </a>
+     <a href="#contato">
+      Contato
+     </a>
+    </nav>
+    <a class="header-order" href="#cardapio">
+     VER CARD&Aacute;PIO &nearrow;
+    </a>
+    <button aria-controls="cart-dialog" aria-haspopup="dialog" aria-label="Abrir carrinho de pedidos (0 itens)" class="cart-trigger" id="cart-trigger" type="button">
+     <span aria-hidden="true" class="cart-trigger-icon">
+      🛒
+     </span>
+     <span class="cart-trigger-label">
+      MEU PEDIDO
+     </span>
+     <span aria-label="0 itens no carrinho" class="cart-count" id="cart-count">
+      0
+     </span>
+    </button>
+   </div>
+  </header>
+  <main id="conteudo" tabindex="-1">
+   <!-- 02. HERO: APRESENTAÇÃO PRINCIPAL -->
+   <section class="hero" id="inicio">
+    <div class="container hero-grid">
+     <div class="hero-copy" data-reveal="">
+      <p class="eyebrow">
+       BURGER HOUSE &bull; SMASH &amp; GRILL
+      </p>
+      <h1>
+       O SABOR
+       <span>
+        QUE MARCA.
+       </span>
+      </h1>
+      <p class="hero-description">
+       P&atilde;o macio, carne suculenta, queijo derretendo e combina&ccedil;&otilde;es
+                        que despertam a fome. Prepare-se para conhecer uma nova
+                        experi&ecirc;ncia de burger.
+      </p>
+      <div class="hero-actions">
+       <a class="button button-primary" href="#cardapio">
+        EXPLORAR CARD&Aacute;PIO
+        <span aria-hidden="true">
+         &rarr;
+        </span>
+       </a>
+       <a class="button button-outline" href="#sobre">
+        NOSSA HIST&Oacute;RIA
+       </a>
+      </div>
+      <p class="hero-caption">
+       FEITO PARA QUEM AMA UM BOM BURGER.
+      </p>
+      <div class="hero-highlights">
+       <div class="hero-highlight">
+        <strong>
+         SMASH
+        </strong>
+        <span>
+         NA CHAPA
+        </span>
+       </div>
+       <span aria-hidden="true" class="highlight-divider">
+       </span>
+       <div class="hero-highlight">
+        <strong>
+         HOUSE
+        </strong>
+        <span>
+         MOLHO ESPECIAL
+        </span>
+       </div>
+       <span aria-hidden="true" class="highlight-divider">
+       </span>
+       <div class="hero-highlight">
+        <strong>
+         BURGER
+        </strong>
+        <span>
+         COM ATITUDE
+        </span>
+       </div>
+      </div>
+     </div>
+     <!-- Fotografia da Hero (Etapa 3) -->
+     <div class="hero-art" data-reveal="">
+      <div class="hero-photo-frame">
+       <img alt="Hamb&uacute;rguer gourmet acompanhado de batatas" class="hero-photo" decoding="async" fetchpriority="high" src="assets/hero-burger.jpg"/>
+      </div>
+      <div aria-hidden="true" class="hero-sticker">
+       <strong>
+        BURGER
+       </strong>
+       <span>
+        TIME!
+       </span>
+      </div>
+      <span aria-hidden="true" class="hero-decoration">
+       ✳
+      </span>
+     </div>
+    </div>
+   </section>
+   <!-- 03. FAIXA DE IDENTIDADE (Etapa 2) -->
+   <div class="flavor-strip">
+    <div class="container flavor-strip-inner">
+     <span>
+      SMASH BURGERS
+     </span>
+     <span aria-hidden="true">
+      ✳
+     </span>
+     <span>
+      QUEIJO DERRETIDO
+     </span>
+     <span aria-hidden="true">
+      ✳
+     </span>
+     <span>
+      SABOR INTENSO
+     </span>
+     <span aria-hidden="true">
+      ✳
+     </span>
+     <span>
+      BURGER HOUSE
+     </span>
+    </div>
+   </div>
+   <!-- 04. CARDÁPIO -->
+   <section class="section menu-section" id="cardapio">
+    <div class="container">
+     <div class="section-heading" data-reveal="">
+      <p class="eyebrow">
+       ESCOLHA SEU FAVORITO
+      </p>
+      <h2>
+       NOSSO
+       <span>
+        CARD&Aacute;PIO.
+       </span>
+      </h2>
+      <p>
+       Escolha seus favoritos, filtre o card&aacute;pio e monte um pedido demonstrativo. Valores ilustrativos.
+      </p>
+     </div>
+     <div aria-label="Filtrar o card&aacute;pio" class="menu-filters" role="group">
+      <button aria-pressed="true" class="filter-button is-active" data-filter="todos" type="button">
+       Todos
+      </button>
+      <button aria-pressed="false" class="filter-button" data-filter="burgers" type="button">
+       Burgers
+      </button>
+      <button aria-pressed="false" class="filter-button" data-filter="acompanhamentos" type="button">
+       Acompanhamentos
+      </button>
+      <button aria-pressed="false" class="filter-button" data-filter="bebidas" type="button">
+       Bebidas
+      </button>
+     </div>
+     <p aria-live="polite" class="menu-feedback" id="menu-feedback" role="status">
+      Exibindo 8 produtos.
+     </p>
+     <div class="menu-grid">
+      <article class="product-card" data-category="burgers" data-price-cents="3290" data-product-id="classic-smash" data-product-name="Classic Smash" data-reveal="">
+       <div class="product-media">
+        <img alt="Fotografia ilustrativa de hamb&uacute;rguer cl&aacute;ssico com queijo, alface e tomate" class="product-image" decoding="async" loading="lazy" src="assets/classic-smash.jpg"/>
+       </div>
+       <div class="product-content">
+        <p class="product-category">
+         SMASH BURGER
+        </p>
+        <h3>
+         Classic Smash
+        </h3>
+        <p class="product-description">
+         Smash burger, cheddar, alface, tomate e molho especial no p&atilde;o brioche.
+        </p>
+        <div class="product-bottom">
+         <strong class="product-price">
+          R$ 32,90
+         </strong>
+         <button aria-label="Adicionar Classic Smash ao carrinho" class="product-add" data-add="classic-smash" type="button">
+          + ADICIONAR
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card product-card--featured" data-category="burgers" data-price-cents="3990" data-product-id="bacon-melt" data-product-name="Bacon Melt" data-reveal="">
+       <span class="product-badge">
+        DESTAQUE DA CASA
+       </span>
+       <div class="product-media">
+        <img alt="Fotografia ilustrativa de cheeseburger gourmet" class="product-image" decoding="async" loading="lazy" src="assets/bacon-melt.jpg"/>
+       </div>
+       <div class="product-content">
+        <p class="product-category">
+         ESPECIAL DA CASA
+        </p>
+        <h3>
+         Bacon Melt
+        </h3>
+        <p class="product-description">
+         Hamb&uacute;rguer suculento, cheddar cremoso, bacon crocante e cebola caramelizada.
+        </p>
+        <div class="product-bottom">
+         <strong class="product-price">
+          R$ 39,90
+         </strong>
+         <button aria-label="Adicionar Bacon Melt ao carrinho" class="product-add" data-add="bacon-melt" type="button">
+          + ADICIONAR
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card" data-category="burgers" data-price-cents="4290" data-product-id="fire-house" data-product-name="Fire House" data-reveal="">
+       <div class="product-media">
+        <img alt="Fotografia ilustrativa de hamb&uacute;rguer gourmet" class="product-image" decoding="async" loading="lazy" src="assets/fire-house.jpg"/>
+       </div>
+       <div class="product-content">
+        <p class="product-category">
+         BURGER PICANTE
+        </p>
+        <h3>
+         Fire House
+        </h3>
+        <p class="product-description">
+         Hamb&uacute;rguer, queijo, jalape&ntilde;os e molho picante para quem gosta de intensidade.
+        </p>
+        <div class="product-bottom">
+         <strong class="product-price">
+          R$ 42,90
+         </strong>
+         <button aria-label="Adicionar Fire House ao carrinho" class="product-add" data-add="fire-house" type="button">
+          + ADICIONAR
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card" data-category="burgers" data-price-cents="4690" data-product-id="double-house" data-product-name="Double House" data-reveal="">
+       <div class="product-media">
+        <img alt="Fotografia ilustrativa de hamb&uacute;rguer; representa&ccedil;&atilde;o n&atilde;o exata do Double House" class="product-image" decoding="async" loading="lazy" src="assets/classic-smash.jpg"/>
+       </div>
+       <div class="product-content">
+        <p class="product-category">
+         DOUBLE BURGER
+        </p>
+        <h3>
+         Double House
+        </h3>
+        <p class="product-description">
+         Dois smash burgers, cheddar duplo, cebola grelhada e molho da casa.
+        </p>
+        <div class="product-bottom">
+         <strong class="product-price">
+          R$ 46,90
+         </strong>
+         <button aria-label="Adicionar Double House ao carrinho" class="product-add" data-add="double-house" type="button">
+          + ADICIONAR
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card" data-category="acompanhamentos" data-price-cents="1690" data-product-id="batata-rustica" data-product-name="Batata R&uacute;stica" data-reveal="">
+       <div class="product-media">
+        <span aria-hidden="true" class="food-emoji">
+         🍟
+        </span>
+       </div>
+       <div class="product-content">
+        <p class="product-category">
+         ACOMPANHAMENTO
+        </p>
+        <h3>
+         Batata R&uacute;stica
+        </h3>
+        <p class="product-description">
+         Batatas douradas e crocantes com temperos da casa.
+        </p>
+        <div class="product-bottom">
+         <strong class="product-price">
+          R$ 16,90
+         </strong>
+         <button aria-label="Adicionar Batata R&uacute;stica ao carrinho" class="product-add" data-add="batata-rustica" type="button">
+          + ADICIONAR
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card" data-category="acompanhamentos" data-price-cents="1890" data-product-id="onion-rings" data-product-name="Onion Rings" data-reveal="">
+       <div class="product-media">
+        <span aria-hidden="true" class="food-emoji">
+         🧅
+        </span>
+       </div>
+       <div class="product-content">
+        <p class="product-category">
+         ACOMPANHAMENTO
+        </p>
+        <h3>
+         Onion Rings
+        </h3>
+        <p class="product-description">
+         An&eacute;is de cebola empanados, dourados e crocantes.
+        </p>
+        <div class="product-bottom">
+         <strong class="product-price">
+          R$ 18,90
+         </strong>
+         <button aria-label="Adicionar Onion Rings ao carrinho" class="product-add" data-add="onion-rings" type="button">
+          + ADICIONAR
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card" data-category="bebidas" data-price-cents="790" data-product-id="refrigerante" data-product-name="Refrigerante Lata" data-reveal="">
+       <div class="product-media">
+        <span aria-hidden="true" class="food-emoji">
+         🥤
+        </span>
+       </div>
+       <div class="product-content">
+        <p class="product-category">
+         BEBIDA
+        </p>
+        <h3>
+         Refrigerante Lata
+        </h3>
+        <p class="product-description">
+         Lata de 350 ml para acompanhar seu burger.
+        </p>
+        <div class="product-bottom">
+         <strong class="product-price">
+          R$ 7,90
+         </strong>
+         <button aria-label="Adicionar Refrigerante Lata ao carrinho" class="product-add" data-add="refrigerante" type="button">
+          + ADICIONAR
+         </button>
+        </div>
+       </div>
+      </article>
+      <article class="product-card" data-category="bebidas" data-price-cents="1190" data-product-id="limonada" data-product-name="Limonada da House" data-reveal="">
+       <div class="product-media">
+        <span aria-hidden="true" class="food-emoji">
+         🍋
+        </span>
+       </div>
+       <div class="product-content">
+        <p class="product-category">
+         BEBIDA
+        </p>
+        <h3>
+         Limonada da House
+        </h3>
+        <p class="product-description">
+         Limonada c&iacute;trica e refrescante servida gelada.
+        </p>
+        <div class="product-bottom">
+         <strong class="product-price">
+          R$ 11,90
+         </strong>
+         <button aria-label="Adicionar Limonada da House ao carrinho" class="product-add" data-add="limonada" type="button">
+          + ADICIONAR
+         </button>
+        </div>
+       </div>
+      </article>
+     </div>
+     <p class="menu-note">
+      * Pre&ccedil;os e produtos ilustrativos. Algumas fotografias s&atilde;o refer&ecirc;ncias de apresenta&ccedil;&atilde;o e podem ser repetidas.
+     </p>
+    </div>
+   </section>
+   <!-- 05. BANNER ESPECIAL (Etapa 2) -->
+   <section aria-labelledby="special-title" class="special-section">
+    <div class="container">
+     <div class="special-card">
+      <div class="special-copy" data-reveal="">
+       <p class="special-kicker">
+        O CONCEITO BURGER HOUSE
+       </p>
+       <h2 id="special-title">
+        N&Atilde;O &Eacute; S&Oacute; FOME.
+        <span>
+         &Eacute; VONTADE DE BURGER.
+        </span>
+       </h2>
+       <p class="special-description">
+        Ingredientes, combina&ccedil;&otilde;es intensas e muito sabor em cada mordida.
+                            Uma experi&ecirc;ncia feita para apaixonados por hamb&uacute;rgueres.
+       </p>
+       <a class="button button-dark" href="#cardapio">
+        ESCOLHER MEU BURGER
+        <span aria-hidden="true">
+         &rarr;
+        </span>
+       </a>
+      </div>
+      <div aria-hidden="true" class="special-art">
+       <span class="special-monogram">
+        BH
+       </span>
+       <span class="special-star">
+        ✳
+       </span>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- 06. BASTIDORES: SEÇÃO ADICIONADA NA ETAPA 3 -->
+   <section aria-labelledby="gallery-title" class="section gallery-section" id="bastidores">
+    <div class="container">
+     <div class="gallery-heading" data-reveal="">
+      <p class="eyebrow">
+       O UNIVERSO BURGER HOUSE
+      </p>
+      <h2 id="gallery-title">
+       DA CHAPA
+       <span>
+        &Agrave; MESA.
+       </span>
+      </h2>
+      <p>
+       Inspira&ccedil;&atilde;o em cada detalhe: do preparo na chapa
+                        at&eacute; a apresenta&ccedil;&atilde;o do burger.
+      </p>
+     </div>
+     <div class="gallery-grid">
+      <figure class="gallery-card" data-reveal="">
+       <img alt="Preparo de alimentos em uma chapa profissional" decoding="async" loading="lazy" src="assets/bastidores-chapa.jpg"/>
+       <figcaption>
+        <span>
+         01 / PREPARO
+        </span>
+        <h3>
+         O SABOR COME&Ccedil;A NA CHAPA.
+        </h3>
+       </figcaption>
+      </figure>
+      <figure class="gallery-card" data-reveal="">
+       <img alt="Hamb&uacute;rguer servido com batatas e bebida" decoding="async" loading="lazy" src="assets/burger-mesa.jpg"/>
+       <figcaption>
+        <span>
+         02 / EXPERI&Ecirc;NCIA
+        </span>
+        <h3>
+         CADA DETALHE IMPORTA.
+        </h3>
+       </figcaption>
+      </figure>
+     </div>
+     <p class="gallery-disclaimer">
+      Fotografias ilustrativas de um projeto demonstrativo.
+     </p>
+    </div>
+   </section>
+   <!-- 07. SOBRE -->
+   <section class="section about-section" id="sobre">
+    <div class="container about-grid">
+     <div class="about-visual" data-reveal="">
+      <span class="about-monogram">
+       BH
+      </span>
+      <p>
+       GOOD FOOD.
+       <br/>
+       GOOD MOOD.
+      </p>
+     </div>
+     <div class="about-copy" data-reveal="">
+      <p class="eyebrow">
+       MAIS QUE UM HAMB&Uacute;RGUER
+      </p>
+      <h2>
+       PAIX&Atilde;O POR
+       <span>
+        CADA MORDIDA.
+       </span>
+      </h2>
+      <p>
+       Na Burger House, a ideia &eacute; simples: transformar ingredientes
+                        e boas combina&ccedil;&otilde;es em momentos memor&aacute;veis.
+      </p>
+      <p>
+       Nosso conceito re&uacute;ne sabor, criatividade e uma identidade
+                        marcante para quem aprecia uma boa hamburgueria.
+      </p>
+      <a class="button button-primary" href="#cardapio">
+       CONHE&Ccedil;A OS BURGERS
+       <span aria-hidden="true">
+        &rarr;
+       </span>
+      </a>
+     </div>
+    </div>
+   </section>
+   <!-- 08. CONTATO -->
+   <section class="section contact-section" id="contato">
+    <div class="container contact-content" data-reveal="">
+     <p class="eyebrow">
+      PREPARADO PARA O PR&Oacute;XIMO BURGER?
+     </p>
+     <h2>
+      A FOME CHAMA.
+      <span>
+       A HOUSE RESPONDE.
+      </span>
+     </h2>
+     <p>
+      Explore nosso card&aacute;pio e conhe&ccedil;a as combina&ccedil;&otilde;es da Burger House.
+     </p>
+     <a class="button button-dark" href="#cardapio">
+      MONTAR PEDIDO  &rarr;
+     </a>
+     <p class="demo-note">
+      Projeto fict&iacute;cio para portf&oacute;lio. Os pedidos s&atilde;o demonstrativos: n&atilde;o h&aacute; pagamento, entrega ou confirma&ccedil;&atilde;o de compra.
+     </p>
+    </div>
+   </section>
+  </main>
+  <!-- 09. RODAPÉ -->
+  <!-- ETAPA 4: CARRINHO DEMONSTRATIVO -->
+  <dialog aria-labelledby="cart-title" class="cart-dialog" id="cart-dialog">
+   <div class="cart-shell">
+    <header class="cart-header">
+     <div>
+      <p class="cart-eyebrow">
+       BURGER HOUSE &bull; DEMONSTRA&Ccedil;&Atilde;O
+      </p>
+      <h2 id="cart-title">
+       MEU PEDIDO
+      </h2>
+     </div>
+     <button aria-label="Fechar carrinho" class="cart-close" id="cart-close" type="button">
+      ✕
+     </button>
+    </header>
+    <div class="cart-body">
+     <p class="cart-explainer">
+      Monte seu pedido de exemplo. Nenhuma compra ser&aacute; realizada neste site.
+     </p>
+     <p class="cart-empty" id="cart-empty">
+      Seu carrinho est&aacute; vazio. Explore o card&aacute;pio e adicione seus favoritos.
+     </p>
+     <ul aria-label="Itens no carrinho" class="cart-items" id="cart-items">
+     </ul>
+     <div class="cart-total">
+      <span>
+       Subtotal dos produtos
+      </span>
+      <strong id="cart-subtotal">
+       R$ 0,00
+      </strong>
+     </div>
+     <p class="cart-fees">
+      Entrega e eventuais taxas n&atilde;o est&atilde;o inclu&iacute;das.
+     </p>
+     <form class="checkout-form" id="checkout-form">
+      <h3>
+       DADOS DA SOLICITA&Ccedil;&Atilde;O
+      </h3>
+      <label for="customer-name">
+       Seu nome
+      </label>
+      <input autocomplete="name" id="customer-name" maxlength="80" minlength="2" name="customer-name" placeholder="Como podemos chamar voc&ecirc;?" required="" type="text"/>
+      <label for="fulfillment">
+       Como gostaria de receber?
+      </label>
+      <select id="fulfillment" name="fulfillment" required="">
+       <option value="retirada">
+        Retirada (simula&ccedil;&atilde;o)
+       </option>
+       <option value="entrega">
+        Entrega (simula&ccedil;&atilde;o)
+       </option>
+      </select>
+      <div class="delivery-field" hidden="" id="delivery-field">
+       <label for="delivery-address">
+        Endere&ccedil;o para entrega
+       </label>
+       <textarea id="delivery-address" maxlength="240" name="delivery-address" placeholder="Rua, n&uacute;mero, bairro e refer&ecirc;ncia" rows="2"></textarea>
+      </div>
+      <label for="order-notes">
+       Observa&ccedil;&otilde;es (opcional)
+      </label>
+      <textarea id="order-notes" maxlength="250" name="order-notes" placeholder="Ex.: sem cebola" rows="2"></textarea>
+      <button class="checkout-button" id="prepare-order" type="submit">
+       PREPARAR PEDIDO DE EXEMPLO &rarr;
+      </button>
+     </form>
+     <section aria-labelledby="order-result-title" class="order-result" hidden="" id="order-result">
+      <h3 id="order-result-title">
+       MENSAGEM PREPARADA
+      </h3>
+      <p id="order-result-status" role="status">
+       Nenhum pedido foi enviado.
+      </p>
+      <textarea aria-label="Mensagem de pedido gerada" id="order-message" readonly="" rows="10"></textarea>
+      <div class="order-result-actions">
+       <button class="copy-order" id="copy-order" type="button">
+        COPIAR MENSAGEM
+       </button>
+       <a class="whatsapp-order" hidden="" href="#" id="whatsapp-order" rel="noopener noreferrer" target="_blank">
+        ABRIR NO WHATSAPP &nearrow;
+       </a>
+      </div>
+      <p aria-live="polite" id="copy-feedback" role="status">
+      </p>
+     </section>
+    </div>
+    <footer class="cart-footer">
+     <button class="cart-clear" id="cart-clear" type="button">
+      Limpar carrinho
+     </button>
+     <button class="cart-continue" id="cart-continue" type="button">
+      CONTINUAR ESCOLHENDO
+     </button>
+    </footer>
+   </div>
+  </dialog>
+  <p aria-live="polite" class="cart-toast" id="cart-toast" role="status">
+  </p>
+  <footer class="footer">
+   <div class="container footer-inner">
+    <a class="logo" href="#inicio">
+     BURGER
+     <span>
+      HOUSE
+     </span>
+     <small>
+      SMASH &amp; GRILL
+     </small>
+    </a>
+    <p>
+     Projeto fict&iacute;cio para portf&oacute;lio profissional.
+    </p>
+    <p>
+     &copy;
+     <span id="year">
+     </span>
+     Burger House.
+    </p>
+   </div>
+  </footer>
+ </body>
+</html>

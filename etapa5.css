@@ -1,0 +1,199 @@
+/* ============================================================
+   BURGER HOUSE — ETAPA 5
+   Acabamento responsivo, acessibilidade e refinamento mobile.
+   Carregar DEPOIS de style.css e etapa4.css.
+   ============================================================ */
+
+/* 01 — Variáveis e pequenas proteções */
+:root { --orange-accessible: #ff9859; }
+html { scroll-padding-top: 105px; }
+body { min-width: 280px; }
+img { max-width: 100%; }
+.container { min-width: 0; }
+section[id] { scroll-margin-top: 105px; }
+.product-card[hidden], .cart-dialog:not([open]), .order-result[hidden], .whatsapp-order[hidden], .delivery-field[hidden] { display: none !important; }
+
+/* O atalho do teclado deve aparecer quando recebe foco. */
+.skip-link:focus-visible { top: 12px; left: 12px; z-index: 9999; }
+
+/* Foco visível em todos os controles interativos do site. */
+:where(a, button, input, select, textarea, summary):focus-visible {
+    outline: 3px solid #ffab73;
+    outline-offset: 3px;
+}
+
+/* 02 — Cabeçalho / botão de menu (visível apenas com JS em tela menor). */
+.menu-toggle {
+    display: none;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid rgba(255, 107, 43, .65);
+    border-radius: 8px;
+    background: #26201c;
+    color: #ffb186;
+    cursor: pointer;
+}
+.menu-bar {
+    display: block;
+    width: 23px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform .2s ease, opacity .2s ease;
+}
+.menu-toggle.is-active .menu-bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.is-active .menu-bar:nth-child(2) { opacity: 0; }
+.menu-toggle.is-active .menu-bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.cart-trigger-icon { line-height: 1; font-size: 16px; }
+.cart-trigger-label { display: inline; }
+
+/* 03 — Refinamento do carrinho */
+.cart-dialog { overscroll-behavior: contain; }
+.cart-body { scrollbar-color: #80553d #171717; }
+.cart-header h2 { line-height: 1.1; }
+.cart-footer { padding-bottom: max(15px, env(safe-area-inset-bottom)); }
+.cart-item { min-width: 0; }
+.cart-item-title, .cart-item-unit { overflow-wrap: anywhere; }
+.quantity-controls { gap: 8px; }
+.qty-button {
+    min-width: 44px;
+    min-height: 44px;
+    font-family: var(--font-body, Arial, sans-serif);
+    font-weight: 700;
+}
+.quantity-value { min-width: 24px; font-variant-numeric: tabular-nums; }
+.cart-item-total, .cart-total strong { font-variant-numeric: tabular-nums; }
+.cart-clear { min-height: 44px; padding: 9px 6px; }
+.copy-order, .whatsapp-order, .product-add, .cart-continue, .checkout-button { min-height: 44px; }
+.checkout-form input, .checkout-form select, .checkout-form textarea, .order-result textarea { scroll-margin-top: 24px; }
+
+/* 04 — Melhoria dos cards e filtros */
+.menu-grid { align-items: stretch; }
+.product-card { min-width: 0; }
+.product-content { flex: 1; }
+.product-description { overflow-wrap: break-word; }
+.product-bottom { min-width: 0; }
+.filter-button { min-height: 44px; }
+.menu-feedback { min-height: 20px; }
+
+/* 05 — Cabeçalho compacto em tablets, notebook estreito e celulares */
+@media (max-width: 1180px) {
+    .header-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 46px auto;
+        align-items: center;
+        gap: 12px;
+        min-height: 76px;
+        padding-block: 12px;
+    }
+    .header-inner > .logo { grid-column: 1; grid-row: 1; min-width: 0; }
+    .js-enabled .menu-toggle { display: flex; grid-column: 2; grid-row: 1; }
+    .cart-trigger { grid-column: 3; grid-row: 1; margin: 0; }
+    .header-order { display: none; }
+    .navigation {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        order: initial;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        max-height: min(65vh, 430px);
+        overflow-y: auto;
+        padding: 10px 0 6px;
+        border-top: 1px solid rgba(255, 255, 255, .13);
+    }
+    .navigation a {
+        width: 100%;
+        min-height: 47px;
+        padding: 10px 8px;
+        font-size: 13px;
+        border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+    .navigation a::after { display: none; }
+    /* Sem JavaScript, os links permanecem acessíveis. */
+    .js-enabled .navigation:not(.is-open) { display: none; }
+    .js-enabled .navigation.is-open { display: flex; }
+    .hero-grid { min-width: 0; }
+}
+
+/* 06 — Cards/títulos com largura reduzida */
+@media (max-width: 850px) {
+    .hero-grid, .about-grid { grid-template-columns: minmax(0, 1fr); }
+    .hero-grid { padding-block: 65px; min-height: 0; }
+    .hero h1 { font-size: clamp(58px, 11vw, 96px); }
+    .hero-art { min-height: 475px; }
+    .special-card { grid-template-columns: 1fr; }
+    .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .about-grid { gap: 35px; }
+}
+
+/* 07 — Layout compacto de smartphone */
+@media (max-width: 600px) {
+    .container { width: calc(100% - 32px); }
+    .header-inner { gap: 7px; grid-template-columns: minmax(0, 1fr) 44px auto; }
+    .header-inner > .logo { font-size: clamp(24px, 7.2vw, 31px); }
+    .logo small { font-size: 8px; letter-spacing: 2px; }
+    .menu-toggle { width: 44px; height: 44px; }
+    .cart-trigger {
+        min-height: 44px;
+        gap: 5px;
+        padding: 7px;
+        font-size: 11px;
+    }
+    .cart-trigger-label { display: none; }
+    .cart-count { min-width: 23px; height: 23px; font-size: 11px; }
+    .hero h1 { font-size: clamp(51px, 12.3vw, 74px); overflow-wrap: normal; }
+    .hero-highlights { gap: 10px; }
+    .hero-highlight strong { font-size: 22px; }
+    .hero-highlight span { font-size: 8px; letter-spacing: .3px; }
+    .hero-art { min-height: 370px; }
+    .hero-photo-frame { width: min(78vw, 310px); }
+    .flavor-strip-inner { justify-content: center; }
+    .menu-grid, .gallery-grid { grid-template-columns: minmax(0, 1fr); }
+    .product-media { height: 230px; }
+    .product-add { flex: 1 1 auto; }
+    .special-card { padding: 33px 20px; }
+    .special-copy h2 { font-size: clamp(42px, 10.3vw, 62px); }
+    .special-art { min-height: 160px; }
+    .section-heading h2, .gallery-heading h2 { overflow-wrap: anywhere; }
+    .cart-dialog {
+        width: 100%;
+        height: 100dvh;
+        max-height: 100dvh;
+        border-left: 0;
+    }
+    .cart-header { padding: 18px 16px; }
+    .cart-body { padding: 16px; }
+    .cart-footer { gap: 8px; padding: 12px 16px max(12px, env(safe-area-inset-bottom)); }
+    .cart-footer > button { min-height: 44px; }
+    .checkout-form input, .checkout-form select, .checkout-form textarea {
+        font-size: 16px; /* Evita zoom automático em muitos celulares. */
+    }
+}
+
+@media (max-width: 365px) {
+    .header-inner { gap: 5px; }
+    .header-inner > .logo { font-size: 23px; }
+    .cart-trigger { gap: 4px; padding: 6px; }
+    .cart-trigger-icon { font-size: 14px; }
+    .hero h1 { font-size: 48px; }
+    .cart-item { grid-template-columns: 60px minmax(0, 1fr); gap: 10px; }
+    .cart-item-thumb { width: 60px; height: 60px; }
+    .cart-footer { flex-wrap: wrap; }
+    .cart-footer > button { flex: 1 1 140px; }
+}
+
+/* 08 — Preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .menu-bar, .cart-toast, .product-card, .product-image, .hero-photo {
+        transition: none !important;
+    }
+}

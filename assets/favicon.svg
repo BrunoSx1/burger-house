@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Burger House">
+<rect width="64" height="64" rx="13" fill="#101010"/>
+<rect x="4" y="4" width="56" height="56" rx="10" stroke="#ff6b2b" stroke-width="2" fill="none"/>
+<text x="32" y="44" font-size="32" font-weight="bold" font-family="Impact, Arial, sans-serif" text-anchor="middle" fill="#ff6b2b">BH</text>
+</svg>
